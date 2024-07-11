@@ -20,218 +20,166 @@
 
 body {
     overflow-x: hidden;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-nav {
-    position: -webkit-sticky;
-    /* For Safari */
+a {
+    text-decoration: none;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1em;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(5px);
+    font-size: 1.3rem;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 1000;
+}
+
+.logo_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: var(--nav-bg);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.nav-links li {
-    font-family: var(--pry-ff);
-}
-
-.nav-links .nav-text {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 700ms;
-    font-family: var(--sec-ff);
-}
-
-.nav-links .nav-text:hover {
-    color: var(--sec-clr);
-}
-
-.resume-item .resume-btn {
-    width: 8em;
-    height: 3em;
-    border: 1px solid var(--sec-clr);
-    outline: none;
-    background-color: var(--sec-clr);
-    text-transform: capitalize;
-    border-radius: 1.5em;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.resume-item .resume-txt {
-    color: var(--pry-clr);
-    font-family: var(--sec-ff);
-    text-decoration: none;
-    text-align: center;
-    font-size: 1rem;
-    display: block;
     width: 100%;
-}
+    max-width: 30em;
 
-.resume-item .resume-btn:hover {
-    box-shadow:
-        0 0 5px var(--sec-clr),
-        0 0 25px var(--sec-clr),
-        0 0 50px var(--sec-clr),
-        0 0 200px var(--sec-clr);
-    background-color: var(--sec-clr);
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo .logo-text {
-    font-size: 2rem;
     color: var(--pry-clr);
-    text-decoration: none;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: bold;
     font-family: var(--sec-ff);
 }
 
-.logo-text span {
+.logo-words {
     color: var(--sec-clr);
 }
 
-.logo-text .fa-laptop {
-    color: var(--sec-clr);
-}
-
-.burger {
+.navbar_toggle {
     display: none;
 }
 
-/* responsive nav mobile */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        right: 0;
-        height: fit-content;
-        top: 0;
-        padding-top: 60px;
-        background-color: var(--nav-bg);
-        display: flex;
+.main_nav {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.main_nav li {
+    margin: 0 1em;
+}
+
+.main_nav li a {
+    color: var(--pry-clr);
+    font-family: var(--sec-ff);
+    text-transform: capitalize;
+    transition: color 600ms;
+}
+
+.main_nav li a:hover {
+    color: var(--sec-clr);
+}
+
+.resume-container {
+    display: flex;
+    align-items: center;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.resume-btn {
+    width: 9em;
+    height: 3em;
+    border-radius: 1.5em;
+    border: none;
+    background-color: var(--sec-clr);
+    transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--sec-clr);
+}
+
+.resume-btn .dw-resume {
+    font-family: var(--sec-ff);
+    color: var(--pry-clr);
+    font-size: 1.1rem;
+}
+
+/* Responsive Navigation Bar */
+@media only screen and (max-width: 992px) {
+    .navbar {
         flex-direction: column;
-        align-items: center;
-        gap: 1em;
-        width: 100%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
+        align-items: flex-start;
     }
 
-    .nav-links li {
-        opacity: 0;
-        padding: 10px 0;
-    }
-
-    .resume-item .resume-btn {
-        width: 8em;
-        height: 3em;
-        border-radius: 1.5em;
-    }
-    
-    .resume-item .resume-txt {
-        font-size: 1rem;
-        padding: 0.5em;
-    }
-
-    .resume-btn:hover .resume-txt {
-        color: var(--pry-clr);
-    }
-    
-    .burger {
+    .navbar_toggle {
         display: block;
+        font-size: 30px;
+        color: var(--pry-clr);
+        background: transparent;
+        border: none;
         cursor: pointer;
     }
 
-    .burger div {
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        margin: 5px;
-        transition: all 0.3s ease;
-    }
-
-    .nav-active {
-        transform: translateX(0);
-    }
-
-    @keyframes navLinkFade {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    .nav-links li {
-        animation: navLinkFade 0.5s ease forwards 0.5s;
-    }
-
-    .toggle .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .toggle .line2 {
+    .main_nav,
+    .resume-container {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
         opacity: 0;
     }
 
-    .toggle .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
+    .main_nav.show_nav,
+    .resume-container.show_nav {
+        display: flex;
+        max-height: 500px;
+        /* Adjust as needed */
+        opacity: 1;
     }
 
-    .nav-links a:focus,
-    .nav-links a:hover {
-        color: var(--sec-clr);
-
-    }
-
-    .resume-item {
-        display: block;
-    }
-
-    .menu-backdrop {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
+    .main_nav li {
         width: 100%;
-        height: fit-content;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 9;
+        text-align: center;
+        margin: 0;
+        padding: 1em 0;
     }
 
-    .display-backdrop {
-        display: block;
+    .resume-container {
+        width: 100%;
+        justify-content: center;
+        padding: 1em 0;
     }
 }
 
-.fixed-position {
-    overflow: hidden;
+.navbar_toggle .fa-bars-staggered {
+    display: block;
 }
 
-section {
-    width: 100%;
-    height: 90vh;
+.navbar_toggle .fa-times {
+    display: none;
+}
+
+.navbar_toggle.toggled .fa-bars-staggered {
+    display: none;
+}
+
+.navbar_toggle.toggled .fa-times {
+    display: block;
 }
 
 /* Base Styles */
@@ -247,6 +195,7 @@ section {
 }
 
 .profile-pic-box {
+    margin: 5em auto;
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -294,7 +243,7 @@ h1 {
 }
 
 .arrow-down {
-    width: 3em;
+    width: 2.5em;
     aspect-ratio: 1/1;
     border-radius: 50%;
     border: 0;
@@ -310,6 +259,7 @@ h1 {
 .arrow-down a {
     color: var(--sec-clr);
     animation: bounce 0.7s infinite alternate;
+    font-size: 1.5rem;
 }
 
 /* Bounce Animation */
@@ -700,7 +650,12 @@ footer span {
     }
 
     .arrow-down {
+        width: 3em;
+        aspect-ratio: 1/1;
         width: 1.5em;
+    }
+
+    .arrow-down a {
         font-size: 1rem;
     }
 
@@ -786,9 +741,11 @@ footer span {
 
     .arrow-down {
         width: 3em;
+        aspect-ratio: 1/1;
+        width: 1.5em;
     }
-
-    .arrow-down .fa-angles-down {
+    
+    .arrow-down a {
         font-size: 1rem;
     }
 

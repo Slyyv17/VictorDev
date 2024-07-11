@@ -13,32 +13,36 @@
         <link rel="shortcut icon" href="Assets/img/Código Design Vector ícone PNG , Vector, Design, Icon Imagem PNG e Vetor Para Download Gratuito.jpeg" type="image/x-icon">
     </head>
     <body>
-        <nav id="navbar">
-            <div class="logo">
-                <a href="#" class="logo-text"> victor<span>.dev</span>
-                    <i class="fa-solid fa-laptop"></i>
-                </a>
+        <nav class="navbar">
+            <div class="logo_header">
+                <a href="index.html" class="logo">Victor.<span class="logo-words">dev</span></a>
+                <button class="navbar_toggle">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                    <i class="fa-solid fa-times"></i>
+                </button>
             </div>
-            <ul class="nav-links">
-                <li><a href="#" class="nav-text">About Me</a></li>
-                <li><a href="#" class="nav-text">Projects</a></li>
-                <li><a href="#" class="nav-text">Skills</a></li>
-                <li><a href="#" class="nav-text">Contact</a></li>
-                <li class="resume-item">
-                    <button class="resume-btn">
-                        <a href="Assets/docs/Ememe Victor Resume 2.docx" download class="resume-txt">resume</a>
-                    </button>
+        
+            <ul class="main_nav">
+                <li>
+                    <a href="#about-me" class="nav_links">About Me</a>
+                </li>
+                <li>
+                    <a href="#skill-set" class="nav_links">skills</a>
+                </li>
+                <li>
+                    <a href="#projects" class="nav_links">project</a>
+                </li>
+                <li>
+                    <a href="#" class="nav_links">contacts</a>
                 </li>
             </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+        
+            <div class="resume-container">
+                <button class="resume-btn">
+                    <a href="Assets/docs/Ememe Victor Resume 2.docx" class="dw-resume">Resume</a>
+                </button>
             </div>
         </nav>
-
-        
-        <div class="menu-backdrop"></div>
 
         <main>
             <section id="intro">
@@ -154,7 +158,7 @@
                         </div>
                     
                         <div class="services-box" data-aos="fade-up"
-     data-aos-duration="3000">
+     data-aos-duration="3000" id="skill-set">
                             <span class="sub-head">
                                 <i class="fa-solid fa-sitemap"></i> software architect
                             </span>

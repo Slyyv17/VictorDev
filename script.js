@@ -1,36 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav-links");
-  const navLinks = document.querySelectorAll(".nav-links li");
-  const backdrop = document.querySelector(".menu-backdrop");
+const navToggle = document.querySelector(".navbar_toggle");
+const links = document.querySelector(".main_nav");
+const resumeContainer = document.querySelector(".resume-container");
 
-  burger.addEventListener("click", () => {
-    // Toggle Nav
-    nav.classList.toggle("nav-active");
-
-    // Animate Links
-    navLinks.forEach((link, index) => {
-      if (link.style.animation) {
-        link.style.animation = "";
-      } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${
-          index / 7 + 0.3
-        }s`;
-      }
-    });
-
-    // Burger Animation
-    burger.classList.toggle("toggle");
-
-    // Display Backdrop
-    backdrop.classList.toggle("display-backdrop");
-  });
-
-  backdrop.addEventListener("click", () => {
-    nav.classList.remove("nav-active");
-    burger.classList.remove("toggle");
-    backdrop.classList.remove("display-backdrop");
-  });
+navToggle.addEventListener("click", function () {
+  links.classList.toggle("show_nav");
+  resumeContainer.classList.toggle("show_nav");
+  navToggle.classList.toggle("toggled");
 });
 
 // type effect
