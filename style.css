@@ -477,8 +477,7 @@ ol li {
     align-items: center;
 }
 
-.rw-projects,
-.gd-projects {
+.rw-projects {
     background-color: #e0e0e0;
     height: 15em;
     border: 1px solid #ccc;
@@ -488,6 +487,41 @@ ol li {
     font-size: 1.2rem;
     color: #333;
     overflow: hidden;
+}
+
+.gd-projects {
+    background-color: #e0e0e0;
+    height: fit-content;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #333;
+    overflow: hidden;
+}
+
+.gd-projects img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.gd-projects p {
+    opacity: 0;
+    transition: all 500ms;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+}
+
+.gd-projects:hover p {
+    transform: translate(-50%, 0);
+    /* Move to the exact center */
+    opacity: 1;
+    text-align: center;
 }
 
 .rw-projects {
