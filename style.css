@@ -346,15 +346,17 @@ ol li {
 }
 
 .services-container {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 1em;
 }
 
 .services-container .services-box {
     width: 100%;
-    max-width: 25em;
+    max-width: 20em;
     height: fit-content;
     gap: 1em;
     text-align: center;
@@ -416,6 +418,13 @@ ol li {
 .skill-box i {
     margin-right: 8px;
     /* Space between icon and text */
+}
+
+.skill-box svg {
+    margin-right: 3px;
+    margin-bottom: 0.3em;
+    font-size: 1rem;
+    color: var(--sec-clr);
 }
 
 /* project section */
