@@ -226,7 +226,7 @@ h1 {
 
 .contacts {
     width: 100%;
-    max-width: 15em;
+    max-width: 20em;
     height: fit-content;
     display: flex;
     justify-content: space-around;
