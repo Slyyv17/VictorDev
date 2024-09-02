@@ -382,7 +382,7 @@ ol li {
 
 /* skills */
 .skill-container {
-    max-width: 45em;
+    max-width: 60em;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
