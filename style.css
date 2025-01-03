@@ -348,39 +348,74 @@ ol li {
     list-style: none;
 }
 
-.services-container {
-    width: 100%;
+.designs {
     display: flex;
-    flex-wrap: wrap;
+    width: fit-content;
+    height: fit-content;
     justify-content: center;
     align-items: center;
     gap: 1em;
 }
 
+.designs > h3 {
+    color: var(--nav-bg) !important;
+}
+
+
+.designs .squ-design {
+    width: 10em;
+    height: 0.4em;
+    background-color: var(--sec-clr);
+}
+
+
+.services-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items horizontally */
+    align-items: flex-start; /* Align items to the top */
+    gap: 2em; /* Increased gap for better spacing on desktop */
+    padding: 2em 1em; /* Add padding for better container spacing */
+}
+
 .services-container .services-box {
     width: 100%;
     max-width: 20em;
-    height: fit-content;
-    gap: 1em;
+    padding: 1.5em; /* Add padding inside the box for better text alignment */
     text-align: center;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column; /* Ensure the icon and text align vertically */
+    align-items: start;
+    gap: 1em; /* Spacing between icon, title, and description */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Rounded corners for a modern look */
+    background-color: #ffffff; /* White background for contrast */
 }
 
 .services-box .sub-head {
-    color: var(--sec-clr);
-    font-size: 1.5rem;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-transform: capitalize;
-    padding-top: 0.5em;
-    font-weight: 600;
+    gap: 0.5em; /* Space between the icon and text */
+    color: #333; /* Darker text for better visibility */
+}
+
+.services-box .sub-head i {
+    font-size: 1.5em; /* Larger icon size for prominence */
+    color: var(--sec-clr); /* Accent color for the icons */
 }
 
 .services-box .sub-desc {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #555; /* Lighter text color for descriptions */
     text-align: left;
-    padding-left: 0.5em;
-    padding-bottom: 1em;
 }
+
 
 
 /* skills */

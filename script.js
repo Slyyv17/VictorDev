@@ -10,10 +10,13 @@ navToggle.addEventListener("click", function () {
 
 // type effect
 let i = 0;
-let txt = "web developer";
-let txt2 = "software architect";
-let txt3 = "graphics designer";
-let textArray = [txt, txt2, txt3];
+let txt = "Frontend Engineer";
+let txt2 = "Backend Engineer";
+let txt3 = "Software Architect";
+let txt4 = "Product Designer";
+
+
+let textArray = [txt, txt2, txt3, txt4];
 let textIndex = 0;
 let speed = 40;
 let currentText = textArray[textIndex];
